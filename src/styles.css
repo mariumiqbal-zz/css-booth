@@ -1,0 +1,90 @@
+/* Take the .slider and . Instructions containers out of the document flow. Position them absolutely.
+Give the body element a sunrise background color and garnish the background with a flower in the bottom left corner
+Position the color-boxes container in the center
+Style the color-boxes container */
+
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two");
+
+:root {
+  --primary-color: rgba(241, 196, 15, 1);
+  --secondary-color: teal;
+
+  --slider: 0;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  background: url("http://bit.ly/2FiPrRA") 0 100%/300px no-repeat,
+    var(--primary-color);
+  font-family: "Shadows Into Light Two", cursive;
+}
+
+.booth-slider {
+  display: block;
+}
+
+.booth {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-boxes {
+  background: red;
+  border-radius: 0.3rem;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+
+  transform: perspective(500px) rotateY(calc(var(--slider) * 1deg));
+  transition: transform 0.5s;
+}
+
+.color-box {
+  padding: 1rem 3.5rem;
+  margin-bottom: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Handle colors for each color box */
+.color-box:nth-child(1) {
+  background: var(--bg-1);
+}
+
+.color-box:nth-child(2) {
+  background: var(--bg-2);
+}
+
+.color-box:nth-child(3) {
+  background: var(--bg-3);
+}
+
+.color-box:nth-child(4) {
+  background: var(--bg-4);
+}
+
+.color-box:nth-child(5) {
+  background: var(--bg-5);
+}
+
+.color-box:nth-child(6) {
+  background: var(--bg-6);
+}
+
+.slider {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.instructions {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: black;
+}
